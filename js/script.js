@@ -1,6 +1,7 @@
 /*
 Theme: Flatfy Theme
 Author: Andrea Galanti
+Modified by Ronald Bernal
 Bootstrap Version 
 Build: 1.0
 http://www.andreagalanti.it
