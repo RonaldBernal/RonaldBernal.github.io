@@ -20,8 +20,6 @@
 
     <!-- Custom Google Web Font -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Slab">
 	
     <!-- Custom CSS-->
@@ -43,8 +41,7 @@
     <div class="intro-header">
 		<div class="col-xs-12 text-center abcen1">
 			<h1 class="h1_home wow fadeIn" style="text-shadow: 2px 1px 5px #000000;" data-wow-delay="0.4s">
-				ABOR'S
-				<i style="font-size:16px; vertical-align: top;" class="glyphicon glyphicon-registration-mark"></i>
+				ABOR'S<i style="font-size:16px; vertical-align: top;" class="glyphicon glyphicon-registration-mark"></i>
 			</h1> 
 			<h3 class="h3_home wow fadeIn" style="text-shadow: 2px 1px 5px #000000;" data-wow-delay="0.6s">¡Queremos escucharte!</h3>
 		</div>    
@@ -76,7 +73,7 @@
 				<ul class="nav navbar-nav">
 					<li class="menuItem"><a style="text-shadow: 2px 1px 5px #000000;" href="#whereis">¿Dónde?</a></li>
 					<li class="menuItem"><a style="text-shadow: 2px 1px 5px #000000;" href="#team">Nuestro Equipo</a></li>
-					<li class="menuItem"><a style="text-shadow: 2px 1px 5px #000000;" href="#confirm">Contáctanos</a></li>
+					<li class="menuItem"><a style="text-shadow: 2px 1px 5px #000000;" href="#contact">Contáctanos</a></li>
 				</ul>
 			</div>
 		   
@@ -106,12 +103,14 @@
                 <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
                     <h3 class="section-heading">¿Dónde es?</h3>
 					<ul class="descp lead2">
-						<li>The Green House</li>
-						<li><i class="fa fa-map"> Col. San Benito, Pasaje #11, Calle Circunvalación, San Salvador</i></li>
-						<li>¿Cuándo?</li>
-						<li><i class="fa fa-calendar"> Martes 24 de Nov.</i></li>
-						<li>Hora</li>
-						<li><i class="fa fa-clock-o"> 3:00pm</i></li>
+						<li style="font-weight: bold;">The Green House</li>
+						<li>
+							<i class="glyphicon glyphicon-map-marker"></i>Col. San Benito, Pasaje #11, Calle Circunvalación, San Salvador
+						</li>
+						<li style="font-weight: bold;">¿Cuándo?</li>
+						<li><i class="fa fa-calendar"></i> Martes 24 de Nov.</li>
+						<li style="font-weight: bold;">Hora</li>
+						<li><i class="fa fa-clock-o"></i> 3:00pm</li>
 					</ul>
 				</div>           
 				<div class="col-sm-6 wow fadeInRightBig">
@@ -202,40 +201,47 @@
 	</div>
 	
 	<!-- Contact -->
-	<div id="confirm" class="content-section-b">
+	<div id="contact" class="content-section-b">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center wrap_title">
 					<h2>Confirma tu asistencia</h2>
 				</div>
 			
-				<form role="form" action="" method="post" >
+				<form name="sentMessage" id="contactForm" novalidate>
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 					<div class="col-md-8 col-md-offset-2">
 						<div class="form-group">
-							<label for="InputName">Nombre</label>
+							<label style="font-weight: bold;" for="InputName">Nombre</label>
 							<div class="input-group">
-								<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Nombre" required>
+								<input type="text" class="form-control" id="name" placeholder="Nombre" required data-validation-required-message="Por favor escriba su nombre.">
+								<p class="help-block text-danger"></p>
 								<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="InputEmail">Correo</label>
+							<label style="font-weight: bold;" for="InputEmail">Correo</label>
 							<div class="input-group">
-								<input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Correo" required  >
+								<input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <p class="help-block text-danger"></p>
 								<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="InputMessage">Número de teléfono</label>
+							<label style="font-weight: bold;" for="InputMessage">Número de teléfono</label>
 							<div class="input-group">
-								<textarea name="InputMessage" id="InputMessage" class="form-control" rows="1" placeholder="Teléfono" required></textarea>
+								<input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <p class="help-block text-danger"></p>
 								<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
 							</div>
 						</div>
+						<div id="success" style="text-shadow: 2px 1px 5px #000000;"></div>
 
 						<input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right">
+
 					</div>
 				</form>
 			</div>
@@ -292,6 +298,9 @@
 	 new WOW().init();
 	</script>
 	<script type="text/javascript" src="js/classie.js"></script>
+	<!-- Contact Form JavaScript -->
+    <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="js/contact_me.js"></script>
 </body>
 
 </html>
