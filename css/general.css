@@ -77,7 +77,7 @@ margin: auto;
 
 .h1_home{
 	font-size: 80px;
-	font-family: arvo;
+	font-family: montserrat;
 	font-weight: 300;
 	letter-spacing: 6px;
 }
@@ -256,7 +256,7 @@ color: #ECEBEB;
 }
 
 .navbar-brand {
-	font-family: arvo;
+	font-family: montserrat;
 	letter-spacing: 3px;
 	font-weight: 400 !important;
 }
